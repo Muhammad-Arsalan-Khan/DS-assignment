@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome, {{ name }}! Login successful.</h1>
+    
+    <h2>Person Data:</h2>
+    <ul>
+        {% for person, profession in data.items() %}
+            {% if person != name %}
+                <li>{{ person }}: {{ profession }}</li>
+            {% else %}
+                <li><strong>{{ person }} (This is you!): {{ profession }}</strong></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>
