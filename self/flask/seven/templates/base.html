@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} my website {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Home Page flask WTF</h1>
+    </header>
+
+    {% with message = get_flashed_messages(with_categories=True) %}
+        {% if message %}
+            {% for category, msg in message %}
+                <span class="flash" style="background-color: rgb(116, 194, 220); color: rgb(87, 230, 87); padding: 20px;">{{ msg }}</span>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <p>&copy; 2026 My Website</p>
+    </footer>
+</body>
+</html>
