@@ -8,7 +8,7 @@ if num > 0:
     elif num >= 10 and num <= 99:
         print("It is a Double Digit number")
     elif num >= 100 and num <= 999:
-        print("It is a Three Digit number")
+        print("It is a Three Digit number .")
     else:
         print("It has more than three digits")
 else:
